@@ -1,0 +1,23 @@
+<h2>{{ title }}</h2>
+
+<!-- Registration -->
+<h3>Register</h3>
+<input type="text" #rname placeholder="Name"> <br>
+<input type="text" #raddress placeholder="Address"> <br>
+<input type="text" #rcontact placeholder="Contact"> <br>
+<input type="email" #remail placeholder="Email"> <br>
+<input type="password" #rpassword placeholder="Password"> <br>
+<button (click)="register(rname.value, raddress.value, rcontact.value, remail.value, rpassword.value)">
+  Register
+</button>
+
+<hr>
+
+<!-- Login -->
+<h3>Login</h3>
+<input type="text" #lname placeholder="Name"> <br>
+<input type="password" #lpassword placeholder="Password"> <br>
+<button (click)="login(lname.value, lpassword.value)">Login</button>
+
+<p>{{ loginStatus }}</p>
+

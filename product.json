@@ -1,0 +1,12 @@
+[
+    { "id": 1, "name": "Abstract Art", "price": 45.99, "image": "art.jpg" },
+    { "id": 2, "name": "Modern Landscape", "price": 60.50, "image": "art.jpg" },
+    { "id": 3, "name": "Color Splash", "price": 39.00, "image": "art.jpg" },
+    { "id": 1, "name": "Abstract Art", "price": 45.99, "image": "art.jpg" },
+    { "id": 2, "name": "Modern Landscape", "price": 60.50, "image": "art.jpg" },
+    { "id": 1, "name": "Abstract Art", "price": 45.99, "image": "art.jpg" },
+    { "id": 2, "name": "Modern Landscape", "price": 60.50, "image": "art.jpg" },
+    { "id": 1, "name": "Abstract Art", "price": 45.99, "image": "art.jpg" },
+    { "id": 2, "name": "Modern Landscape", "price": 60.50, "image": "art.jpg" }
+  ]
+  
