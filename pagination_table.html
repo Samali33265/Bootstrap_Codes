@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Catalog</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f2f2f2;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    img {
+      width: 50px;
+    }
+    .pagination {
+      margin-top: 10px;
+      text-align: center;
+    }
+    button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Product Catalog</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="productBody"></tbody>
+  </table>
+
+  <div class="pagination" id="pagination" >
+    <button onclick="showPage(1)">1</button>
+    <button onclick="showPage(2)">2</button>
+  </div>
+
+  <script>
+    const products = [
+      { image: "art.jpg", name: "Item 1", price: 1000, desc: "Description" },
+      { image: "art.jpg", name: "Item 2", price: 2000, desc: "Description" },
+      { image: "art.jpg", name: "Item 3", price: 3000, desc: "Description" },
+      { image: "art.jpg", name: "Item 4", price: 4000, desc: "Description" },
+      { image: "art.jpg", name: "Item 5", price: 5000, desc: "Description" },
+      { image: "art.jpg", name: "Item 6", price: 6000, desc: "Description" },
+      { image: "art.jpg", name: "Item 7", price: 7000, desc: "Description" },
+      { image: "art.jpg", name: "Item 8", price: 8000, desc: "Description" },
+      { image: "art.jpg", name: "Item 9", price: 9000, desc: "Description" },
+      { image: "art.jpg", name: "Item 10", price: 10000, desc: "Description" },
+      { image: "art.jpg", name: "Item 11", price: 11000, desc: "Description" },
+      { image: "art.jpg", name: "Item 12", price: 12000, desc: "Description" }
+    ];
+
+    function showPage(page) {
+      const body = document.getElementById("productBody");
+      body.innerHTML = "";
+      const start = (page - 1) * 10;
+      const end = start + 10;
+      const items = products.slice(start, end);
+      for (let p of items) {
+        body.innerHTML += `
+          <tr>
+            <td><img src="${p.image}"></td>
+            <td>${p.name}</td>
+            <td>₹${p.price}</td>
+            <td>${p.desc}</td>
+          </tr>`;
+      }
+    }
+
+    // Initial load
+    showPage(1);
+
+    // Show pagination only if more than 10 items
+    if (products.length > 10) {
+      document.getElementById("pagination").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
